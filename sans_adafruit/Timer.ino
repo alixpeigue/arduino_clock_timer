@@ -1,4 +1,4 @@
-
+#include <math.h>
 #include "Timer.h"
 
 Timer::Timer(int hour = 0, int minute = 0, int second = 0) : Clock(hour, minute, second)
@@ -33,10 +33,10 @@ int Timer::roundedUpMinutes()
 
 int Timer::getHour()
 {
-  	return roundedUpMinutes()/60;
+    return roundedUpMinutes()/60%24;
 }
 
 int Timer::getMinute()
 {
-  	return roundedUpMinutes()-getHour()*60;
+  	return (roundedUpMinutes()-getHour()*60)%60;
 }

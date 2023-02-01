@@ -1,5 +1,3 @@
-#include <math.h>
-
 #include <Wire.h>
 
 #include <SevSeg.h>
@@ -163,9 +161,9 @@ void loop() {
     updateButtons();
     // Loop function runs over and over again to implement the clock logic.
     //currentMode = updateMode(currentMode);
- 	relay.write(!timer.isEnded());
-    updateMode();
+ 	  relay.write(!timer.isEnded());
     changeData();
+    updateMode();
     display();
     //sevseg.refreshDisplay();
     //Serial.println(currentMode);
